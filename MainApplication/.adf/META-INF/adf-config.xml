@@ -14,7 +14,7 @@
   </adf-adfm-config>
   <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
     <adf-property name="adfAppUID"
-                  value="SharedComponents.com.packt.jdeveloper.cookbook.shared"/>
+                  value="MainApplication.com.packt.jdeveloper.cookbook.mainapplication"/>
   </adf:adf-properties-child>
   <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
     <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"

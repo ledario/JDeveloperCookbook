@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/WEB-INF/templates/TemplateDef1.jspx" id="pt1">
+          <f:facet name="mainContent"/>
+          <f:facet name="menuBar">
+            <af:menuBar id="mb1">
+              <af:menu text="File" id="m1">
+                <af:commandMenuItem text="Save" id="cmi1"
+                                    icon="/images/filesave.png"/>
+                <af:commandMenuItem text="Action" id="cmi2"
+                                    icon="/images/action.png"/>
+                <af:commandMenuItem text="Print" id="cmi3"
+                                    icon="/images/print.png"/>
+                <af:commandMenuItem text="Mail" id="cmi4"
+                                    icon="/images/envelope.png"/>
+              </af:menu>
+            </af:menuBar>
+          </f:facet>
+          <f:facet name="topBar">
+            <af:group id="g1">
+              <af:commandToolbarButton text="Save" id="ctb1"
+                                       icon="/images/filesave.png"/>
+              <af:commandToolbarButton text="Action" id="ctb2"
+                                       icon="/images/action.png"/>
+              <af:commandToolbarButton text="Mail" id="ctb3"
+                                       icon="/images/envelope.png"/>
+              <af:commandToolbarButton text="Print" id="ctb4"
+                                       icon="/images/print.png"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="popupContent"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

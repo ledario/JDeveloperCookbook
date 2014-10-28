@@ -54,42 +54,14 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.shared.bc"/>
-   <value n="jbo.JpxName" v="com.packt.jdeveloper.cookbook.shared.bc.SharedBC"/>
-   <value n="JboProject" v="true"/>
+   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.mainapplication.bc"/>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
          <string v="ADFbc"/>
       </list>
    </hash>
-   <value n="oracle.jbo.SavedPreferences" v="true"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
-      <list n="copyRes">
-         <string v=".gif"/>
-         <string v=".GIF"/>
-         <string v=".jpg"/>
-         <string v=".JPG"/>
-         <string v=".jpeg"/>
-         <string v=".JPEG"/>
-         <string v=".png"/>
-         <string v=".PNG"/>
-         <string v=".properties"/>
-         <string v=".xml"/>
-         <string v=".ejx"/>
-         <string v=".xcfg"/>
-         <string v=".cpx"/>
-         <string v=".dcx"/>
-         <string v=".sva"/>
-         <string v=".wsdl"/>
-         <string v=".ini"/>
-         <string v=".tld"/>
-         <string v=".tag"/>
-         <string v=".xlf"/>
-         <string v=".xsl"/>
-         <string v=".xsd"/>
-         <string v=".jpx"/>
-      </list>
       <value n="internalEncoding" v="UTF8"/>
       <list n="Javac.commandline.optionlist">
          <string v="-g"/>
@@ -105,7 +77,7 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="SharedComponents_SharedBC_adflibSharedComponents1">
+         <hash n="MainApplication_MainApplicationBC_adflibMainApplication1">
             <value n="adflib-connectionDetails" v="true"/>
             <value n="adflib-nonReusablesError" v="false"/>
             <hash n="archiveOptions">
@@ -131,22 +103,22 @@
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="deploy/SharedComponents_SharedBC_adflibSharedComponents1.jar"/>
+            <url n="jarURL" path="deploy/MainApplication_MainApplicationBC_adflibMainApplication1.jar"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
             <hash n="LibraryDependencies"/>
             <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="SharedComponents_SharedBC_adflibSharedComponents1"/>
+            <value n="profileName" v="MainApplication_MainApplicationBC_adflibMainApplication1"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="SharedComponents_SharedBC_adflibSharedComponents1"/>
+         <string v="MainApplication_MainApplicationBC_adflibMainApplication1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="SharedComponents-SharedBC-webapp"/>
-      <value n="j2eeWebContextRoot" v="SharedComponents-SharedBC-context-root"/>
+      <value n="j2eeWebAppName" v="MainApplication-MainApplicationBC-webapp"/>
+      <value n="j2eeWebContextRoot" v="MainApplication-MainApplicationBC-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
@@ -193,14 +165,6 @@
             <value n="id" v="Oracle JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
-         <hash>
-            <value n="id" v="Resource Bundle Support"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Common Runtime"/>
-            <value n="isJDK" v="false"/>
-         </hash>
       </list>
       <list n="libraryReferences">
          <hash>
@@ -233,14 +197,6 @@
          </hash>
          <hash>
             <value n="id" v="Oracle JDBC"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Resource Bundle Support"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="ADF Common Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

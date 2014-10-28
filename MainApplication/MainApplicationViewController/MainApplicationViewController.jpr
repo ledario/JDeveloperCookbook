@@ -1,7 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
-   <value n="ADFComponentWizard.LAST_TAG_NS_PREF" v="component"/>
-   <value n="ADFComponentWizard.LAST_TAGLIB_URI_PREF"/>
    <hash n="component-versions">
       <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
@@ -56,24 +54,18 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.shared.view"/>
-   <hash n="oracle.ide.model.DependencyConfiguration">
-      <list n="dependencyList">
-         <hash>
-            <value n="class" v="oracle.jdeveloper.library.ProjectLibrary"/>
-            <url n="sourceOwnerURL" path="../SharedComponents.jws"/>
-            <url n="sourceURL" path="../SharedBC/SharedBC.jpr"/>
-         </hash>
-      </list>
+   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.mainapplication.view"/>
+   <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
+      <value n="hasDataControls" v="true"/>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
+         <string v="XML"/>
          <string v="Java"/>
          <string v="JSP"/>
          <string v="JSF"/>
          <string v="ADF_FACES"/>
          <string v="ADFc"/>
-         <string v="XML"/>
          <string v="HTML"/>
       </list>
    </hash>
@@ -93,61 +85,87 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
-         <hash n="SharedComponents">
-            <value n="adflib-connectionDetails" v="true"/>
-            <value n="adflib-nonReusablesError" v="false"/>
-            <hash n="archiveOptions">
-               <value n="hasManifest" v="true"/>
+         <hash n="MainApplication_MainApplicationViewController_webapp1">
+            <hash n="appletArchives"/>
+            <hash n="appletFiles">
+               <value n="autoInclude" v="true"/>
+               <list n="selectionFilters">
+                  <string v="oracle.jdevimpl.deploy.common.JavaSelectionFilter"/>
+               </list>
             </hash>
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="false"/>
+            </hash>
+            <url n="earURL" path="deploy/MainApplication_MainApplicationViewController_webapp1.ear"/>
+            <value n="enterpriseAppName" v="MainApplication_MainApplicationViewController_webapp1"/>
             <hash n="fileGroups">
                <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="5"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Web Files"/>
+                     <hash n="filters">
+                        <list n="rules"/>
+                     </hash>
+                     <value n="internalName" v="web-files"/>
+                     <value n="type" v="1"/>
+                  </hash>
                   <hash>
                      <list n="contributors">
                         <hash>
                            <value n="type" v="2"/>
                         </hash>
                         <hash>
-                           <value n="type" v="5"/>
+                           <value n="type" v="7"/>
                         </hash>
                      </list>
-                     <value n="displayName" v="Project Output"/>
+                     <value n="displayName" v="WEB-INF/classes"/>
                      <hash n="filters">
                         <list n="rules"/>
                      </hash>
                      <value n="internalName" v="project-output"/>
+                     <value n="targetWithinJar" v="WEB-INF/classes"/>
                      <value n="type" v="1"/>
+                  </hash>
+                  <hash>
+                     <value n="displayName" v="WEB-INF/lib"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="**"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="libraries"/>
+                     <value n="targetWithinJar" v="WEB-INF/lib"/>
+                     <value n="type" v="3"/>
                   </hash>
                </list>
             </hash>
-            <url n="jarURL" path="../../ReUsableJARs/SharedComponents.jar"/>
+            <url n="jarURL" path="deploy/MainApplication_MainApplicationViewController_webapp1.war"/>
             <hash n="libraryDependencies">
                <value n="IncludeLibrariesFromOtherContainers" v="true"/>
             </hash>
-            <hash n="LibraryDependencies">
-               <list n="dependencyList">
-                  <hash>
-                     <value n="class" v="oracle.jdeveloper.library.ProjectLibrary"/>
-                     <url n="sourceOwnerURL" path="../SharedComponents.jws"/>
-                     <url n="sourceURL" path="../SharedBC/SharedBC.jpr"/>
-                  </hash>
-               </list>
-            </hash>
-            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
-            <value n="profileName" v="SharedComponents"/>
+            <value n="profileClass" v="oracle.jdeveloper.deploy.war.WarProfile"/>
+            <value n="profileName" v="MainApplication_MainApplicationViewController_webapp1"/>
          </hash>
       </hash>
       <list n="profileList">
-         <string v="SharedComponents"/>
+         <string v="MainApplication_MainApplicationViewController_webapp1"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
-      <value n="j2eeWebAppName" v="SharedComponents-SharedViewController-webapp"/>
-      <value n="j2eeWebContextRoot" v="SharedComponents-SharedViewController-context-root"/>
+      <value n="j2eeWebAppName" v="MainApplication-MainApplicationViewController-webapp"/>
+      <value n="j2eeWebContextRoot" v="MainApplication-MainApplicationViewController-context-root"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
          <hash n="Default">
             <value n="custom" v="false"/>
+            <value n="javaOptions" v="-Djbo.debugoutput=adflogger -Djbo.adflogger.level=FINEST"/>
             <value n="name" v="Default"/>
          </hash>
       </hash>
@@ -226,10 +244,34 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../JDeveloperCookbook/ReUsableJARs/SharedComponents.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF Library"/>
+               <value n="id" v="ADF Library"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JSP Runtime"/>
@@ -300,7 +342,19 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle JEWT"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -342,6 +396,17 @@
             <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/adf-richclient-impl-11.jar!/META-INF/afu.tld"/>
             <value n="URI" v="http://xmlns.oracle.com/adf/faces/rich"/>
             <value n="version" v="11"/>
+         </hash>
+         <hash>
+            <hash n="baseLibrary">
+               <value n="name" v="ADF Data Visualization"/>
+               <value n="version" v="1.1"/>
+            </hash>
+            <value n="jspVersion" v="2.1"/>
+            <value n="name" v="ADF Data Visualization"/>
+            <value n="tldURL" v="@oracle.home@../oracle_common/modules/oracle.adf.view_11.1.1/dvt-faces.jar!/META-INF/bi.tld"/>
+            <value n="URI" v="http://xmlns.oracle.com/dss/adf/faces"/>
+            <value n="version" v="1.1"/>
          </hash>
       </list>
    </hash>
