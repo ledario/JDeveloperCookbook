@@ -157,9 +157,8 @@ public class JSFUtils {
      * @param key object key
      * @param object value to store
      */
-    public static
 
-    void storeOnSession(String key, Object object) {
+    public static void storeOnSession(String key, Object object) {
         FacesContext ctx = getFacesContext();
         Map sessionState = ctx.getExternalContext().getSessionMap();
         sessionState.put(key, object);
@@ -263,12 +262,14 @@ public class JSFUtils {
             new FacesMessage(FacesMessage.SEVERITY_ERROR, attrName, msg);
         ctx.addMessage(getRootViewComponentId(), fm);
     }
+
     /**
      * Add JSF error message for a specific attribute.
      * @param attrName name of attribute
      * @param msg error message string
      */
-    public static void addFacesErrorMessage(String compId,String attrName, String msg) {
+    public static void addFacesErrorMessage(String compId, String attrName,
+                                            String msg) {
         // TODO: Need a way to associate attribute specific messages
         //       with the UIComponent's Id! For now, just using the view id.
         //TODO: make this use the internal getMessageFromBundle?

@@ -1,5 +1,7 @@
 package com.packt.jdeveloper.cookbook.shared.bc.exceptions;
 
+import com.packt.jdeveloper.cookbook.shared.bc.exceptions.messages.BundleUtils;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -33,39 +35,11 @@ public class ExtJboException extends JboException {
         super(ResourceBundle.class, errorCode, null);
     }
 
-    @Override
+    @Override   
     public String getMessage() {
-        
-        // default message 
-        String errorMessage = ""; 
-        try {
-            // get access to the error messages bundle 
-            final ResourceBundle messagesBundle =
-                ResourceBundle.getBundle(ERRORS_BUNDLE, Locale.getDefault()); 
-            // construct the error message
-            errorMessage =
-                this.getErrorCode() + " - " 
-                    + messagesBundle.getString(MESSAGE_PREFIX + this.getErrorCode());
-            // get access to the error message parameters bundle 
-            final ResourceBundle parametersBundle =
-                ResourceBundle.getBundle(PARAMETERS_BUNDLE, Locale.getDefault());
-            // loop for all parameters
-            for (int i = 0; i < this.getErrorParameters().length; i++) {
-                // get parameter value
-                final String parameterValue =
-                    parametersBundle.getString(PARAMETER_PREFIX 
-                                               + (String)this.getErrorParameters()[i]);
-                // replace parameter placeholder in the error message string 
-                errorMessage =
-                    errorMessage.replaceAll("\\{" + (i + 1) + "}", parameterValue); 
-            }
-        } catch (Exception e) { 
-            // log the exception 
-            LOGGER.warning(e);
-        }
-        
-        return errorMessage;
+        return BundleUtils.loadMessage(this.getErrorCode(), this.getErrorParameters());
     }
+
     
     // for testing purposes; remove or comment if not needed
     public static void main(String[] args) { 

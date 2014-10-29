@@ -492,7 +492,6 @@ public class ADFUtils {
         }
     }
 
-     
 
     public static Object executeOperationBindingNHandleErr(String methodAction,
                                                            Map param) {
@@ -508,6 +507,44 @@ public class ADFUtils {
             ADFUtils.printOperationBindingExceptions(ob.getErrors());
         }
         return result;
+    }
+
+    /**
+   * Additional utilities added to support Packt 'Oracle JDeveloper 11g Cookboo' book.
+   *
+   * @author Nick Haralabidis
+   *
+   */
+
+    /**
+     * Determines whether there are changes done to the current record.
+     *
+     * @return
+     */
+    public static boolean hasChanges() {
+        // for now return true; see recipe ? to more info
+        return true;
+    }
+
+    /**
+     * Executes a bound operation.
+     *
+     * @param operation, the bound operation id
+     * @param parameters, the bound operation parameters
+     * @return
+     */
+    public static boolean execOperation(String operation,
+                                        String... parameters) {
+        // for now return true; see recipe ? to more info
+        return true;
+    }
+
+    /**
+     * Displays a popup.
+     *
+     * @param popupId
+     */
+    public static void showPopup(String popupId) {
     }
 
 }
