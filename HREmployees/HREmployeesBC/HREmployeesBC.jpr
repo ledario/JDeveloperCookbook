@@ -54,14 +54,45 @@
       <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
-   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.hremployees.model"/>
+   <value n="defaultPackage" v="com.packt.jdeveloper.cookbook.hr.employees.model"/>
+   <value n="jbo.JpxName" v="com.packt.jdeveloper.cookbook.hr.employees.model.HREmployeesBC"/>
+   <value n="JboProject" v="true"/>
+   <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
+      <value n="hasDataControls" v="true"/>
+   </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="Java"/>
          <string v="ADFbc"/>
       </list>
    </hash>
+   <value n="oracle.jbo.SavedPreferences" v="true"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".gif"/>
+         <string v=".GIF"/>
+         <string v=".jpg"/>
+         <string v=".JPG"/>
+         <string v=".jpeg"/>
+         <string v=".JPEG"/>
+         <string v=".png"/>
+         <string v=".PNG"/>
+         <string v=".properties"/>
+         <string v=".xml"/>
+         <string v=".ejx"/>
+         <string v=".xcfg"/>
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".sva"/>
+         <string v=".wsdl"/>
+         <string v=".ini"/>
+         <string v=".tld"/>
+         <string v=".tag"/>
+         <string v=".xlf"/>
+         <string v=".xsl"/>
+         <string v=".xsd"/>
+         <string v=".jpx"/>
+      </list>
       <value n="internalEncoding" v="UTF8"/>
       <list n="Javac.commandline.optionlist">
          <string v="-g"/>
@@ -165,7 +196,40 @@
             <value n="id" v="Oracle JDBC"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="Commons Beanutils 1.6"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="SharedComponents.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../ReUsableJARs/SharedComponents.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="SharedComponents.jar"/>
+               <value n="id" v="SharedComponents.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="ADF Model Runtime"/>
@@ -197,6 +261,26 @@
          </hash>
          <hash>
             <value n="id" v="Oracle JDBC"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Beanutils 1.6"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons Collections 3.1"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF DVT Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="SharedComponents.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
