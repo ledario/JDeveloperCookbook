@@ -216,6 +216,10 @@
             <value n="id" v="SharedComponents.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -227,6 +231,14 @@
                <value n="description" v="SharedComponents.jar"/>
                <value n="id" v="SharedComponents.jar"/>
                <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../ReUsableJARs/SharedComponents.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="ADF Library"/>
+               <value n="id" v="ADF Library"/>
             </hash>
          </list>
       </hash>
@@ -281,6 +293,10 @@
          </hash>
          <hash>
             <value n="id" v="SharedComponents.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

@@ -26,7 +26,8 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="DEPARTMENTS"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    Domain="com.packt.jdeveloper.cookbook.shared.bc.properties.SharedProperties">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>

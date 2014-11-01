@@ -12,7 +12,19 @@
     <Attr Name="_NamedConnection" Value="HRConnection"/>
     <Attr Name="_appModuleNames0"
       Value="com.packt.jdeveloper.cookbook.shared.bc.test.HrAppModule"/>
+    <Attr Name="_domainNames0"
+      Value="com.packt.jdeveloper.cookbook.shared.bc.properties.SharedProperties"/>
+    <Attr Name="_propSetNames0"
+      Value="com.packt.jdeveloper.cookbook.shared.bc.properties.SharedProperties"/>
   </DesignTime>
+  <Containee
+    Name="properties"
+    PackageName="com.packt.jdeveloper.cookbook.shared.bc.properties"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_DO" Value="true"/>
+    </DesignTime>
+  </Containee>
   <Containee
     Name="test"
     PackageName="com.packt.jdeveloper.cookbook.shared.bc.test"

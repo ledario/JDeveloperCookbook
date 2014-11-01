@@ -57,4 +57,12 @@ public class BundleUtils {
 
         return errorMessage;
     }
+    
+    public static String loadParameter(final String parameterKey) { 
+        // get access to the error message parameters bundle
+        final ResourceBundle parametersBundle = 
+            ResourceBundle.getBundle(PARAMETERS_BUNDLE, Locale.getDefault()); 
+        // get and return the the parameter value
+        return parametersBundle.getString(PARAMETER_PREFIX + parameterKey);
+    }
 }

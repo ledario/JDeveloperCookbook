@@ -1,5 +1,7 @@
 package com.packt.jdeveloper.cookbook.shared.bc.extensions;
 
+import com.packt.jdeveloper.cookbook.shared.bc.exceptions.messages.BundleUtils;
+
 import oracle.adf.share.logging.ADFLogger;
 
 import oracle.jbo.AttributeDef;
@@ -20,8 +22,11 @@ public class ExtEntityImpl extends EntityImpl {
 
         // iterate all entity attributes
         for (AttributeDef atrbDef : this.getEntityDef().getAttributeDefs()) {
+            // construct the custom property name from the entity name and attribute 
+            String propertyName = CREATESEQ_PROPERTY + 
+                                  getEntityDef().getName() + atrbDef.getName();
             // check for a custom property called CREATESEQ_PROPERTY 
-            String sequenceName = (String)atrbDef.getProperty(CREATESEQ_PROPERTY); 
+            String sequenceName = (String)atrbDef.getProperty(propertyName); 
             if (sequenceName != null) {
                 // create the sequence based on the custom property sequence name 
                 SequenceImpl sequence = new SequenceImpl(sequenceName, this.getDBTransaction()); 
@@ -41,8 +46,11 @@ public class ExtEntityImpl extends EntityImpl {
             LOGGER.severe("Inside DML_INSERT");
             // iterate all entity attributes 
             for (AttributeDef atrbDef : this.getEntityDef().getAttributeDefs()) {
+                // construct the custom property name from the entity name and attribute
+                String propertyName = COMMITSEQ_PROPERTY + 
+                                      getEntityDef().getName() + atrbDef.getName();
                 // check for a custom property called COMMITSEQ_PROPERTY 
-                String sequenceName = (String)atrbDef.getProperty(COMMITSEQ_PROPERTY); 
+                String sequenceName = (String)atrbDef.getProperty(propertyName); 
                 if (sequenceName != null) {
                     // create the sequence based on the custom property sequence name 
                     SequenceImpl sequence = new SequenceImpl(sequenceName, this.getDBTransaction()); 
@@ -54,5 +62,27 @@ public class ExtEntityImpl extends EntityImpl {
         }
         super.doDML(operation, transactionEvent);
         LOGGER.severe("End of doDML()");
+    }
+    
+    /**
+    * Check if attribute’s value differs from its posted value * @param attrIdx the attribute index
+    * @return
+    */
+    public boolean isAttrValueChanged(int attrIdx) {
+        // get the attribute’s posted value
+        Object postedValue = getPostedAttribute(attrIdx);
+        // get the attribute’s current value
+        Object newValue = getAttributeInternal(attrIdx);
+        // return true is attribute value differs from its posted value 
+        return isAttributeChanged(attrIdx) && 
+               ((postedValue == null && newValue != null) || 
+                (postedValue != null && newValue == null) || 
+                (postedValue != null && newValue != null && 
+                 !newValue.equals(postedValue))); 
+    }
+    
+    public String getBundleParameter(String parameterKey) { 
+        // use BundleUtils to load the parameter
+        return BundleUtils.loadParameter(parameterKey);
     }
 }

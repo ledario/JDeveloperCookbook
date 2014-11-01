@@ -8,10 +8,10 @@
   SeparateXMLFiles="true"
   PackageName="com.packt.jdeveloper.cookbook.hr.employees.model">
   <DesignTime>
-    <Attr Name="_jprName" Value="../../../../../../../../HREmployeesBC.jpr"/>
     <Attr Name="_NamedConnection" Value="HRConnection"/>
     <Attr Name="_appModuleNames0"
       Value="com.packt.jdeveloper.cookbook.hr.employees.model.applciation.EmployeeAppModule"/>
+    <Attr Name="_jprName" Value="../../../../../../../../HREmployeesBC.jpr"/>
   </DesignTime>
   <Containee
     Name="applciation"
@@ -39,4 +39,12 @@
       <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
+  <AppContainee
+    Name="SharedBC"
+    FullName="com.packt.jdeveloper.cookbook.shared.bc.SharedBC"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="SharedComponents.jar"/>
+    </DesignTime>
+  </AppContainee>
 </JboProject>

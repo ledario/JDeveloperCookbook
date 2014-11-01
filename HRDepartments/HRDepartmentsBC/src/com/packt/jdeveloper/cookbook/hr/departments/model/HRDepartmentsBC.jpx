@@ -9,11 +9,11 @@
    SeparateXMLFiles="true"
    PackageName="com.packt.jdeveloper.cookbook.hr.departments.model">
    <DesignTime>
-      <Attr Name="_jprName"
-         Value="../../../../../../../../HRDepartmentsBC.jpr"/>
       <Attr Name="_appModuleNames0"
          Value="com.packt.jdeveloper.cookbook.hr.departments.model.application.DepartmentAppModule"/>
       <Attr Name="_NamedConnection" Value="HRConnection"/>
+      <Attr Name="_jprName"
+         Value="../../../../../../../../HRDepartmentsBC.jpr"/>
    </DesignTime>
    <Containee
       Name="application"
