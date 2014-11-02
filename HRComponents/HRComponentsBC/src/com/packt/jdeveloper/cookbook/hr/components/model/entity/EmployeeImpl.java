@@ -17,7 +17,7 @@ import oracle.jbo.server.EntityDefImpl;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class EmployeeImpl extends ExtEntityImpl {
+public class EmployeeImpl extends com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtEntityImpl {
     private static com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtEntityDefImpl mDefinitionObject;
 
     /**

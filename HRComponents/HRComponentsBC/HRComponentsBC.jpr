@@ -230,6 +230,7 @@
             <hash>
                <list n="classPath">
                   <url path="../../JDeveloperCookbook/ReUsableJARs/SharedComponents.jar" jar-entry=""/>
+                  <url path="../../ReUsableJARs/SharedComponents.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>
