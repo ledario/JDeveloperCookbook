@@ -6,16 +6,19 @@
   Name="HrComponentsAppModule"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
-  ComponentClass="com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtApplicationModuleImpl"
-  ClearCacheOnRollback="true">
+  ComponentClass="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModuleImpl"
+  ClearCacheOnRollback="true"
+  ComponentInterface="com.packt.jdeveloper.cookbook.hr.components.model.application.common.HrComponentsAppModule"
+  ClientProxyName="com.packt.jdeveloper.cookbook.hr.components.model.application.client.HrComponentsAppModuleClient">
   <DesignTime>
     <Attr Name="_deployType" Value="0"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <ViewUsage
-    Name="Departments1"
+    Name="Departments"
     ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.Departments"/>
   <ViewUsage
-    Name="Employees1"
+    Name="Employees"
     ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.Employees"/>
   <ViewUsage
     Name="Employees2"
@@ -29,19 +32,29 @@
   <ViewLinkUsage
     Name="EmpManagerFkLink1"
     ViewLinkObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpManagerFkLink"
-    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees1"
+    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees"
     DstViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="DeptMgrFkLink1"
     ViewLinkObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.link.DeptMgrFkLink"
-    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees1"
+    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees"
     DstViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Departments2"
     Reversed="false"/>
   <ViewLinkUsage
     Name="EmpDeptFkLink1"
     ViewLinkObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpDeptFkLink"
-    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Departments1"
+    SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Departments"
     DstViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees3"
     Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="adjustCommission">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="commissionPctAdjustment"
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+  </ClientInterface>
 </AppModule>

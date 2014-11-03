@@ -319,15 +319,11 @@
   </Key>
   <validation:MethodValidationBean
     Name="Employee_Rule_0"
-    ResId="com.packt.jdeveloper.cookbook.hr.components.model.entity.Employee_Rule_0"
-    MethodName="validateDepartmentEmployeeCount">
+    MethodName="validateDepartmentEmployeeCount"
+    ResId="com.packt.jdeveloper.cookbook.hr.components.model.entity.Employee_Rule_1">
     <validation:ResExpressions>
       <validation:Expression
-        Name="1"><![CDATA[
-
-source.getBundleParameter('DepartmentEmployeeLimit')
-         
-         ]]></validation:Expression>
+        Name="1"><![CDATA[source.getBundleParameter('DepartmentEmp loyeeLimit')]]></validation:Expression>
     </validation:ResExpressions>
   </validation:MethodValidationBean>
   <ResourceBundle>

@@ -23,7 +23,10 @@
   RowClass="com.packt.jdeveloper.cookbook.hr.components.model.view.EmployeesRowImpl"
   ComponentClass="com.packt.jdeveloper.cookbook.hr.components.model.view.EmployeesImpl"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  ComponentInterface="com.packt.jdeveloper.cookbook.hr.components.model.view.common.Employees"
+  ClientProxyName="com.packt.jdeveloper.cookbook.hr.components.model.view.client.EmployeesClient"
+  AccessMode="SCROLLABLE">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -113,4 +116,14 @@
     ViewLink="com.packt.jdeveloper.cookbook.hr.components.model.view.link.DeptMgrFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ClientInterface>
+    <Method
+      Name="adjustCommission">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="commissionPctAdjustment"
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>

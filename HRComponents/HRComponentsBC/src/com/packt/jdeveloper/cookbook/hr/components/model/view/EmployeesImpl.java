@@ -1,5 +1,6 @@
 package com.packt.jdeveloper.cookbook.hr.components.model.view;
 
+import com.packt.jdeveloper.cookbook.hr.components.model.view.common.Employees;
 import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewObjectImpl;
 import oracle.jbo.domain.Number;
 
@@ -10,7 +11,7 @@ import oracle.jbo.RowSetIterator;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class EmployeesImpl extends ExtViewObjectImpl {
+public class EmployeesImpl extends ExtViewObjectImpl implements Employees {
     private static final int SALES_DEPARTMENT_ID = 80;
     /**
      * This is the default constructor (do not remove).
