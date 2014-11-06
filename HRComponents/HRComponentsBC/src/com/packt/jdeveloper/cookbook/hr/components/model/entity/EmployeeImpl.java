@@ -353,7 +353,11 @@ public class EmployeeImpl extends ExtEntityImpl {
      * @return the HireDate
      */
     public Date getHireDate() {
-        return (Date)getAttributeInternal(HIREDATE);
+        //return (Date)getAttributeInternal(HIREDATE);
+        // get the HireDate attribute value
+        Date hireDate = (Date)getAttributeInternal(HIREDATE);
+        // check for null and return today's date if needed
+        return (hireDate == null) ? (Date)Date.getCurrentDate() : hireDate;
     }
 
     /**
