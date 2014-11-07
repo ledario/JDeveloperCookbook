@@ -25,8 +25,7 @@
   PageIterMode="Full"
   UseGlueCode="false"
   ComponentInterface="com.packt.jdeveloper.cookbook.hr.components.model.view.common.Employees"
-  ClientProxyName="com.packt.jdeveloper.cookbook.hr.components.model.view.client.EmployeesClient"
-  AccessMode="SCROLLABLE">
+  ClientProxyName="com.packt.jdeveloper.cookbook.hr.components.model.view.client.EmployeesClient">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -74,7 +73,9 @@
     PrecisionRule="true"
     EntityAttrName="HireDate"
     EntityUsage="Employee"
-    AliasName="HIRE_DATE"/>
+    AliasName="HIRE_DATE">
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="JobId"
     IsNotNull="true"
@@ -126,4 +127,11 @@
         Type="oracle.jbo.domain.Number"/>
     </Method>
   </ClientInterface>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="NewRowAtEnd"
+        Value="true"/>
+    </CustomProperties>
+  </Properties>
 </ViewObject>

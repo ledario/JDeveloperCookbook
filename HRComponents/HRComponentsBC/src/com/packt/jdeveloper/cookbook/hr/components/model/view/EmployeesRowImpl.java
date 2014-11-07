@@ -3,6 +3,7 @@ package com.packt.jdeveloper.cookbook.hr.components.model.view;
 import com.packt.jdeveloper.cookbook.hr.components.model.entity.EmployeeImpl;
 import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewRowImpl;
 
+import oracle.jbo.AttributeList;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
@@ -13,7 +14,14 @@ import oracle.jbo.server.AttributeDefImpl;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class EmployeesRowImpl extends com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewRowImpl {
+public class EmployeesRowImpl extends ExtViewRowImpl {
+    @Override
+    protected void create(AttributeList attributeList) {
+        super.create(attributeList);
+        // set the default hire date to today 
+        this.setHireDate((Date)Date.getCurrentDate());
+    }
+
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -174,6 +182,8 @@ public class EmployeesRowImpl extends com.packt.jdeveloper.cookbook.shared.bc.ex
             return vals;
         }
     }
+
+
     public static final int EMPLOYEEID = AttributesEnum.EmployeeId.index();
     public static final int FIRSTNAME = AttributesEnum.FirstName.index();
     public static final int LASTNAME = AttributesEnum.LastName.index();

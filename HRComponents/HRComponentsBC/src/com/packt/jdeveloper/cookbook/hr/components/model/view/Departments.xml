@@ -13,12 +13,13 @@
   FromList="DEPARTMENTS Department"
   BindingStyle="OracleName"
   CustomQuery="false"
-  RowClass="com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewRowImpl"
+  RowClass="com.packt.jdeveloper.cookbook.hr.components.model.view.DepartmentsRowImpl"
   ComponentClass="com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewObjectImpl"
   PageIterMode="Full"
   UseGlueCode="false">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <EntityUsage
     Name="Department"
@@ -49,6 +50,16 @@
     EntityAttrName="LocationId"
     EntityUsage="Department"
     AliasName="LOCATION_ID"/>
+  <ViewAttribute
+    Name="IsNewRow"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <ViewLinkAccessor
     Name="Employees"
     ViewLink="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpDeptFkLink"

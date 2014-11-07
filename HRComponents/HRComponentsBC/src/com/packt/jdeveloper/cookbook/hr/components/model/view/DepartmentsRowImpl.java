@@ -3,6 +3,7 @@ package com.packt.jdeveloper.cookbook.hr.components.model.view;
 import com.packt.jdeveloper.cookbook.hr.components.model.entity.DepartmentImpl;
 import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewRowImpl;
 
+import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.AttributeDefImpl;
@@ -68,6 +69,16 @@ public class DepartmentsRowImpl extends ExtViewRowImpl {
             }
         }
         ,
+        IsNewRow {
+            public Object get(DepartmentsRowImpl obj) {
+                return obj.getIsNewRow();
+            }
+
+            public void put(DepartmentsRowImpl obj, Object value) {
+                obj.setIsNewRow((Boolean)value);
+            }
+        }
+        ,
         Employees {
             public Object get(DepartmentsRowImpl obj) {
                 return obj.getEmployees();
@@ -104,10 +115,13 @@ public class DepartmentsRowImpl extends ExtViewRowImpl {
             return vals;
         }
     }
+
+
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int DEPARTMENTNAME = AttributesEnum.DepartmentName.index();
     public static final int MANAGERID = AttributesEnum.ManagerId.index();
     public static final int LOCATIONID = AttributesEnum.LocationId.index();
+    public static final int ISNEWROW = AttributesEnum.IsNewRow.index();
     public static final int EMPLOYEES = AttributesEnum.Employees.index();
 
     /**
@@ -186,6 +200,24 @@ public class DepartmentsRowImpl extends ExtViewRowImpl {
      */
     public void setLocationId(Number value) {
         setAttributeInternal(LOCATIONID, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute IsNewRow.
+     * @return the IsNewRow
+     */
+    public Boolean getIsNewRow() {
+        //return (Boolean) getAttributeInternal(ISNEWROW);
+        // return true if the row status is New 
+        return Row.STATUS_NEW == this.getDepartment().getEntityState();
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute IsNewRow.
+     * @param value value to set the  IsNewRow
+     */
+    public void setIsNewRow(Boolean value) {
+        setAttributeInternal(ISNEWROW, value);
     }
 
     /**
