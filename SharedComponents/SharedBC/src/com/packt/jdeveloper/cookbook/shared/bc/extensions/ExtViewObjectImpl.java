@@ -1,6 +1,7 @@
 package com.packt.jdeveloper.cookbook.shared.bc.extensions;
 
 import oracle.jbo.AttributeDef;
+import oracle.jbo.Key;
 import oracle.jbo.Row;
 import oracle.jbo.server.ViewAttributeDefImpl;
 import oracle.jbo.server.ViewObjectImpl;
@@ -38,6 +39,35 @@ public class ExtViewObjectImpl extends ViewObjectImpl {
         } else {
             // default behavior: insert at current rowset slot
             super.insertRow(row); 
+        }
+    }
+
+    @Override
+    protected void create() {
+        super.create();
+        // allow read-only View objects to use findByKey() methods 
+        this.setManageRowsByKey(true);
+    }
+    
+    public void refreshView() {
+        Key curRowKey = null;
+        int rangePosOfCurRow = -1;
+        int rangeStart = -1;
+        // get and save the current row
+        Row currentRow = getCurrentRow();
+        // do this only if we have a current row
+        if (currentRow != null) {
+            // get the row information
+            curRowKey = currentRow.getKey();
+            rangePosOfCurRow = getRangeIndexOf(currentRow);
+            rangeStart = getRangeStart();
+        }
+        // execute the View object query
+        executeQuery();
+        // if we have a current row, restore it
+        if (currentRow != null) {
+            setRangeStart(rangeStart);
+            findAndSetCurrentRowByKey(curRowKey, rangePosOfCurRow);
         }
     }
 }

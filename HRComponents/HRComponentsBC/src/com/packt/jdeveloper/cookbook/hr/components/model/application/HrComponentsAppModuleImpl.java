@@ -58,8 +58,8 @@ public class HrComponentsAppModuleImpl extends ExtApplicationModuleImpl implemen
      * Container's getter for Employees3.
      * @return Employees3
      */
-    public EmployeesImpl getEmployees3() {
-        return (EmployeesImpl)findViewObject("Employees3");
+    public EmployeesImpl getEmployeesOfDepartment() {
+        return (EmployeesImpl)findViewObject("EmployeesOfDepartment");
     }
 
     /**
@@ -92,4 +92,8 @@ public class HrComponentsAppModuleImpl extends ExtApplicationModuleImpl implemen
         // adjust the employees commission 
         this.getEmployees().adjustCommission(commissionPctAdjustment);
     }
+     
+     public void refreshEmployees() {
+         this.getEmployees().refreshView();
+     }
 }

@@ -27,7 +27,7 @@
     Name="Departments2"
     ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.Departments"/>
   <ViewUsage
-    Name="Employees3"
+    Name="EmployeesOfDepartment"
     ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.Employees"/>
   <ViewLinkUsage
     Name="EmpManagerFkLink1"
@@ -45,7 +45,7 @@
     Name="EmpDeptFkLink1"
     ViewLinkObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpDeptFkLink"
     SrcViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Departments"
-    DstViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.Employees3"
+    DstViewUsageName="com.packt.jdeveloper.cookbook.hr.components.model.application.HrComponentsAppModule.EmployeesOfDepartment"
     Reversed="false"/>
   <ClientInterface>
     <Method
@@ -55,6 +55,11 @@
       <Parameter
         Name="commissionPctAdjustment"
         Type="oracle.jbo.domain.Number"/>
+    </Method>
+    <Method
+      Name="refreshEmployees">
+      <Return
+        Type="void"/>
     </Method>
   </ClientInterface>
 </AppModule>

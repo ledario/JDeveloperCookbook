@@ -17,9 +17,16 @@ public class HrComponentsAppModuleClient extends ApplicationModuleImpl implement
     public HrComponentsAppModuleClient() {
     }
 
+
     public void adjustCommission(Number commissionPctAdjustment) {
         Object _ret =
             this.riInvokeExportedMethod(this,"adjustCommission",new String [] {"oracle.jbo.domain.Number"},new Object[] {commissionPctAdjustment});
+        return;
+    }
+
+    public void refreshEmployees() {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"refreshEmployees",null,null);
         return;
     }
 }

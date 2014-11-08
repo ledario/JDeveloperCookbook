@@ -8,4 +8,6 @@ import oracle.jbo.domain.Number;
 // ---------------------------------------------------------------------
 public interface HrComponentsAppModule extends ApplicationModule {
     void adjustCommission(Number commissionPctAdjustment);
+
+    void refreshEmployees();
 }
