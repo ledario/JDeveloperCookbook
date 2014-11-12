@@ -10,4 +10,6 @@ public interface HrComponentsAppModule extends ApplicationModule {
     void adjustCommission(Number commissionPctAdjustment);
 
     void refreshEmployees();
+
+    void removeEmployeeFromCollection();
 }

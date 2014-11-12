@@ -29,4 +29,10 @@ public class HrComponentsAppModuleClient extends ApplicationModuleImpl implement
             this.riInvokeExportedMethod(this,"refreshEmployees",null,null);
         return;
     }
+
+    public void removeEmployeeFromCollection() {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"removeEmployeeFromCollection",null,null);
+        return;
+    }
 }

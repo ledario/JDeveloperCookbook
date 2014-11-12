@@ -2,6 +2,7 @@ package com.packt.jdeveloper.cookbook.hr.components.model.application;
 
 import com.packt.jdeveloper.cookbook.hr.components.model.application.common.HrComponentsAppModule;
 import com.packt.jdeveloper.cookbook.hr.components.model.view.EmployeesImpl;
+import com.packt.jdeveloper.cookbook.hr.components.model.view.EmployeesRowImpl;
 import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtApplicationModuleImpl;
 import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewObjectImpl;
 
@@ -96,4 +97,14 @@ public class HrComponentsAppModuleImpl extends ExtApplicationModuleImpl implemen
      public void refreshEmployees() {
          this.getEmployees().refreshView();
      }
+     
+    public void removeEmployeeFromCollection() {
+        // get the current employee
+        EmployeesRowImpl employee = 
+            (EmployeesRowImpl)(this.getEmployees().getCurrentRow());
+        // remove employee from collection 
+        if (employee != null) {
+            employee.removeFromCollection(); 
+        }
+    }
 }

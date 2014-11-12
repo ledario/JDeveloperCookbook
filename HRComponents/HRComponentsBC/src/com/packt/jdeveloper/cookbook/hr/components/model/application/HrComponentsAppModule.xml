@@ -61,5 +61,10 @@
       <Return
         Type="void"/>
     </Method>
+    <Method
+      Name="removeEmployeeFromCollection">
+      <Return
+        Type="void"/>
+    </Method>
   </ClientInterface>
 </AppModule>
