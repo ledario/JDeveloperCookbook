@@ -16,7 +16,8 @@
   RowClass="com.packt.jdeveloper.cookbook.hr.components.model.view.DepartmentsRowImpl"
   ComponentClass="com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewObjectImpl"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  AccessMode="RANGE_PAGING">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -59,10 +60,17 @@
     Type="java.lang.Boolean"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"/>
+    SQLType="BIT"/>
   <ViewLinkAccessor
     Name="Employees"
     ViewLink="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpDeptFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <Properties>
+    <CustomProperties>
+      <Property
+        Name="RowCountLimit"
+        Value="10"/>
+    </CustomProperties>
+  </Properties>
 </ViewObject>
