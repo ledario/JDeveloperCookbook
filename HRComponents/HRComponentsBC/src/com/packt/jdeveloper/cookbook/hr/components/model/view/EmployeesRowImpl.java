@@ -5,6 +5,7 @@ import com.packt.jdeveloper.cookbook.shared.bc.extensions.ExtViewRowImpl;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.RowIterator;
+import oracle.jbo.RowSet;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.AttributeDefImpl;
@@ -136,6 +137,26 @@ public class EmployeesRowImpl extends ExtViewRowImpl {
             }
         }
         ,
+        LovAttrib {
+            public Object get(EmployeesRowImpl obj) {
+                return obj.getLovAttrib();
+            }
+
+            public void put(EmployeesRowImpl obj, Object value) {
+                obj.setLovAttrib((String)value);
+            }
+        }
+        ,
+        LovSwitcher {
+            public Object get(EmployeesRowImpl obj) {
+                return obj.getLovSwitcher();
+            }
+
+            public void put(EmployeesRowImpl obj, Object value) {
+                obj.setLovSwitcher((String)value);
+            }
+        }
+        ,
         Employees {
             public Object get(EmployeesRowImpl obj) {
                 return obj.getEmployees();
@@ -149,6 +170,36 @@ public class EmployeesRowImpl extends ExtViewRowImpl {
         Departments {
             public Object get(EmployeesRowImpl obj) {
                 return obj.getDepartments();
+            }
+
+            public void put(EmployeesRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        DepartmentsLov {
+            public Object get(EmployeesRowImpl obj) {
+                return obj.getDepartmentsLov();
+            }
+
+            public void put(EmployeesRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        JobsLov {
+            public Object get(EmployeesRowImpl obj) {
+                return obj.getJobsLov();
+            }
+
+            public void put(EmployeesRowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        CountriesLov {
+            public Object get(EmployeesRowImpl obj) {
+                return obj.getCountriesLov();
             }
 
             public void put(EmployeesRowImpl obj, Object value) {
@@ -195,8 +246,13 @@ public class EmployeesRowImpl extends ExtViewRowImpl {
     public static final int COMMISSIONPCT = AttributesEnum.CommissionPct.index();
     public static final int MANAGERID = AttributesEnum.ManagerId.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
+    public static final int LOVATTRIB = AttributesEnum.LovAttrib.index();
+    public static final int LOVSWITCHER = AttributesEnum.LovSwitcher.index();
     public static final int EMPLOYEES = AttributesEnum.Employees.index();
     public static final int DEPARTMENTS = AttributesEnum.Departments.index();
+    public static final int DEPARTMENTSLOV = AttributesEnum.DepartmentsLov.index();
+    public static final int JOBSLOV = AttributesEnum.JobsLov.index();
+    public static final int COUNTRIESLOV = AttributesEnum.CountriesLov.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -389,6 +445,38 @@ public class EmployeesRowImpl extends ExtViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for the calculated attribute LovAttrib.
+     * @return the LovAttrib
+     */
+    public String getLovAttrib() {
+        return (String) getAttributeInternal(LOVATTRIB);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute LovAttrib.
+     * @param value value to set the  LovAttrib
+     */
+    public void setLovAttrib(String value) {
+        setAttributeInternal(LOVATTRIB, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute LovSwitcher.
+     * @return the LovSwitcher
+     */
+    public String getLovSwitcher() {
+        return (String) getAttributeInternal(LOVSWITCHER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute LovSwitcher.
+     * @param value value to set the  LovSwitcher
+     */
+    public void setLovSwitcher(String value) {
+        setAttributeInternal(LOVSWITCHER, value);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link Employees.
      */
     public RowIterator getEmployees() {
@@ -400,6 +488,27 @@ public class EmployeesRowImpl extends ExtViewRowImpl {
      */
     public RowIterator getDepartments() {
         return (RowIterator)getAttributeInternal(DEPARTMENTS);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> DepartmentsLov.
+     */
+    public RowSet getDepartmentsLov() {
+        return (RowSet)getAttributeInternal(DEPARTMENTSLOV);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> JobsLov.
+     */
+    public RowSet getJobsLov() {
+        return (RowSet)getAttributeInternal(JOBSLOV);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> CountriesLov.
+     */
+    public RowSet getCountriesLov() {
+        return (RowSet)getAttributeInternal(COUNTRIESLOV);
     }
 
     /**

@@ -30,6 +30,72 @@
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
+  <ViewAccessor
+    Name="DepartmentsLov"
+    ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.DepartmentsLov"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobsLov"
+    ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.JobsLov"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CountriesLov"
+    ViewObjectName="com.packt.jdeveloper.cookbook.hr.components.model.view.CountriesLov"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Departments"
+    ListVOName="DepartmentsLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LovAttrib"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Jobs"
+    ListVOName="JobsLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LovAttrib"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Countries"
+    ListVOName="CountriesLov"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LovAttrib"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CountryName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Employee"
     Entity="com.packt.jdeveloper.cookbook.hr.components.model.entity.Employee"/>
@@ -107,6 +173,41 @@
     EntityAttrName="DepartmentId"
     EntityUsage="Employee"
     AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="LovAttrib"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_Departments"
+    LOVFinder="LovSwitcher">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LovSwitcher"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[if(JobId == 'SA_REP'){ return 'LOV_Countries'
+} else if(JobId == 'ST_CLERK'){ return 'LOV_Jobs'
+} else if(JobId == 'ST_MAN'){ return 'LOV_Departments'
+} else { return null;
+}]]></TransientExpression>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="Employees"
     ViewLink="com.packt.jdeveloper.cookbook.hr.components.model.view.link.EmpManagerFkLink"
